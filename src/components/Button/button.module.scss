@@ -1,0 +1,22 @@
+button {
+    width: 150px;
+    height: 50px;
+    margin: 0px 10px;
+    
+    border: 1px solid #ccc;
+    border-radius: 8px;
+
+    color: #fff;
+    background-color: #112F5C;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+@media (min-width: 1024px) { 
+    button {
+        width: 270px;
+        font-size: 15px;
+    }
+}
