@@ -80,13 +80,12 @@ const Cadastro = () => {
 
   console.log({ endereco });
   console.log({ form });
+  const API_URL = "https://trabalho-dev-web-back.onrender.com";
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      const API_URL = "https://trabalho-dev-web-back.onrender.com";
-
       const response = await axios.post(
         `${API_URL}/cadastroindividual`,
 
@@ -110,8 +109,14 @@ const Cadastro = () => {
       navigate("/");
       console.log({ response });
     } catch (error) {
+      console.error(
+        "Erro ao cadastrar:",
+        error.response ? error.response.data : error.message
+      );
       alert(
-        `Houve algum erro! Entre em contato com o responsável\nErro: ${error}`
+        `Erro ao cadastrar: ${
+          error.response ? JSON.stringify(error.response.data) : error.message
+        }`
       );
       console.log({ error });
     }
